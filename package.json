@@ -4,7 +4,7 @@
     "message-view-knockout"
   ],
   "name": "p2m-message-view-knockout",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Knockout view to show messages from P2M message service.",
   "main": "main/message-view-knockout.js",
   "browser": "browser/message-view-knockout.js",
