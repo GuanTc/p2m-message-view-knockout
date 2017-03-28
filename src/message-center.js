@@ -2,10 +2,11 @@
  * Created by colinhan on 01/03/2017.
  */
 
+//require('bootstrap-switch');
 const ko = require('knockout');
-const bootstrapSwitch = require('bootstrap-switch');
-const bell = require('./message-bell');
-const panel = require('./message-panel');
+
+require('./message-bell');
+require('./message-panel');
 module.exports = ko.components.register('message-center', {
   viewModel: function (params) {
     this.messageTemplate = params.messageTemplate;
