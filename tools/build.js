@@ -16,6 +16,7 @@ const babel = require('rollup-plugin-babel');
 const uglify = require('rollup-plugin-uglify');
 const commonjs = require('rollup-plugin-commonjs');
 const nodeResolve = require('rollup-plugin-node-resolve');
+const fse = require('fs-extra');
 const pkg = require('../package.json');
 
 // The source files to be compiled by Rollup
@@ -92,6 +93,10 @@ for (const file of files) {
       },
     })));
   }
+
+  promise = promise.then(()=> {
+    fse.copySync('src/message.css', `build/${file.output || 'main'}/message.css`)
+  })
 }
 
 // Copy package.json and LICENSE.txt
